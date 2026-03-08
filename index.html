@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontsix Traders | Trade with Clarity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { emerald: { 400: '#34d399', 500: '#10b981', 600: '#059669' }, cyan: { 400: '#22d3ee', 500: '#06b6d4', 600: '#0891b2' }, slate: { 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 800: '#1e293b', 900: '#0f172a' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(51, 65, 85, 0.5); }
+        .grid-bg {
+            background-image: linear-gradient(to right, rgba(128,128,128,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(128,128,128,0.07) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+        }
+        @keyframes sway {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-sway { animation: sway 4s ease-in-out infinite; }
+        .animate-sway-slow { animation: sway 6s ease-in-out infinite 1s; }
+        .animate-sway-slower { animation: sway 8s ease-in-out infinite 2s; }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="relative min-h-screen bg-black text-slate-200 overflow-x-hidden font-sans selection:bg-emerald-500/30">
+
+    <!-- Global Background Effects -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-emerald-600/10 blur-[150px] rounded-full mix-blend-screen"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-cyan-600/10 blur-[150px] rounded-full mix-blend-screen"></div>
+        <div class="absolute inset-0 grid-bg"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="relative z-50 flex items-center justify-between px-6 md:px-12 py-6 border-b border-white/5 bg-black/50 backdrop-blur-xl sticky top-0">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-500 flex items-center justify-center font-bold text-black shadow-[0_0_20px_rgba(16,185,129,0.5)]">P6</div>
+            <span class="text-2xl font-bold tracking-tight text-white">Pontsix</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <a href="#" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Log In</a>
+            <a href="#" class="inline-block text-sm px-5 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] cursor-pointer">Try Free</a>
+        </div>
+    </nav>
+
+    <div class="relative z-10">
+        <!-- SECTION 1: HERO -->
+        <section class="px-6 pt-20 pb-20 md:pt-32 md:pb-32 lg:px-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-8">
+            <!-- Left Column: Copy & CTA -->
+            <div class="flex-1 space-y-8 flex flex-col items-center lg:items-start text-center lg:text-left fade-in-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs sm:text-sm font-medium tracking-wide">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                    </span>
+                    Platform is Live &mdash; Join the Beta
+                </div>
+
+                <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[1.1] text-white">
+                    Trade with <br class="hidden lg:block" />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500">Clarity.</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-slate-400 max-w-2xl leading-relaxed font-light">
+                    The professional social network engineered for prop-firm traders and institutional analysts. Filter the noise, track massive flows, and share your alpha in real-time.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
+                    <a href="#" class="group relative flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-full transition-all duration-300 transform hover:-translate-y-1">
+                        Start Trading Socially
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <div class="absolute inset-0 rounded-full bg-emerald-400 blur-xl opacity-40 group-hover:opacity-60 transition-opacity -z-10"></div>
+                    </a>
+
+                    <a href="#" class="inline-block w-full sm:w-auto px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium rounded-full transition-all duration-300 backdrop-blur-md">
+                        View Live Feed
+                    </a>
+                </div>
+
+                <div class="pt-8 flex flex-wrap justify-center lg:justify-start items-center gap-6 text-sm text-slate-500 font-medium">
+                    <div class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> WebSockets Tech</div>
+                    <div class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Premium Analytics</div>
+                    <div class="flex items-center gap-2"><svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Free to join</div>
+                </div>
+            </div>
+
+            <!-- Right Column: Floating Mock UI -->
+            <div class="flex-1 w-full max-w-xl relative fade-in-up" style="animation-delay: 0.3s;">
+                <!-- Main Glass Panel -->
+                <div class="glass-panel relative rounded-2xl shadow-2xl p-6 overflow-hidden z-10">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold text-sm">Live Feed</h3>
+                                <p class="text-xs text-emerald-400">1,204 active traders</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800 transition-colors">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-500"></div>
+                                <div><h4 class="text-sm font-bold text-slate-200">AliceCapital</h4><p class="text-xs text-slate-500">Just now</p></div>
+                            </div>
+                            <p class="text-sm text-slate-300 mb-2">Massive dark pool prints on $SPY. 4M shares at current VWAP. Rotating out of tech.</p>
+                            <span class="text-xs font-semibold text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded-md">#optionsflow</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800 transition-colors">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-500"></div>
+                                <div><h4 class="text-sm font-bold text-slate-200">BobMacro</h4><p class="text-xs text-slate-500">2m ago</p></div>
+                            </div>
+                            <p class="text-sm text-slate-300 mb-2">CPI beat expectations by 0.1%. Expecting aggressive hawkish tone from the Fed tomorrow. Yields breaking out.</p>
+                            <span class="text-xs font-semibold text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded-md">#macro</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:bg-slate-800 transition-colors">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-500"></div>
+                                <div><h4 class="text-sm font-bold text-slate-200">CharlieFlow</h4><p class="text-xs text-slate-500">5m ago</p></div>
+                            </div>
+                            <p class="text-sm text-slate-300 mb-2">Watching the $NVDA 120 level. If it breaks resistance here we are seeing a gamma squeeze to 130 into Friday op-ex.</p>
+                            <span class="text-xs font-semibold text-cyan-400 bg-cyan-400/10 px-2 py-1 rounded-md">#gamma</span>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900/90 to-transparent pointer-events-none"></div>
+                </div>
+
+                <!-- Floating Accents -->
+                <div class="absolute -top-10 -right-10 hidden sm:flex p-4 rounded-2xl bg-cyan-900/40 border border-cyan-500/30 backdrop-blur-md shadow-lg animate-sway z-0">
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                </div>
+                <div class="absolute -bottom-8 -left-8 hidden sm:flex p-4 rounded-2xl bg-purple-900/40 border border-purple-500/30 backdrop-blur-md shadow-lg animate-sway-slow z-20">
+                    <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+            </div>
+        </section>
+
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        <!-- SECTION 2: FEATURES GRID -->
+        <section class="py-32 px-6 lg:px-12 max-w-7xl mx-auto fade-in-up">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Engineered for <span class="text-emerald-400">Execution.</span></h2>
+                <p class="text-slate-400 text-lg">We stripped away the cat videos and engagement bait. Pontsix gives you exactly what you need to find an edge in the markets.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-8 rounded-3xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Zero-Latency Feed</h3>
+                    <p class="text-slate-400 leading-relaxed">Our proprietary WebSocket engine delivers posts and charts to your screen instantly. No pulling to refresh.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-8 rounded-3xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Trending Flow</h3>
+                    <p class="text-slate-400 leading-relaxed">Automatically aggregate mentions of tickers to see exactly where the smart money is rotating in real time.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-8 rounded-3xl bg-slate-900/40 border border-slate-800 backdrop-blur-sm relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Verified Institutional</h3>
+                    <p class="text-slate-400 leading-relaxed">Optional verification for active prop-firm and institutional traders to filter out retail noise.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+        <!-- SECTION 3: SOCIAL PROOF -->
+        <section class="py-32 px-6 lg:px-12 max-w-7xl mx-auto text-center fade-in-up">
+            <h2 class="text-3xl md:text-5xl font-bold mb-16">Trusted by the <span class="text-cyan-400">1%.</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="p-8 rounded-2xl border border-slate-800 bg-slate-900/20 text-left">
+                    <div class="flex gap-1 mb-4 text-emerald-400">★★★★★</div>
+                    <p class="text-lg text-slate-300 mb-6 italic">"Pontsix completely replaced Twitter for my desk. The signal-to-noise ratio is insane. When something prints on the tape, it's on Pontsix a second later."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-800"></div>
+                        <div>
+                            <div class="font-bold text-white">David K.</div>
+                            <div class="text-sm text-slate-500">Senior Volatility Trader</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl border border-slate-800 bg-slate-900/20 text-left">
+                    <div class="flex gap-1 mb-4 text-emerald-400">★★★★★</div>
+                    <p class="text-lg text-slate-300 mb-6 italic">"The UI is incredibly clean. I keep the live feed up on my 4th monitor all day. Found 3 massive block trades last week solely from community alerts."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-800"></div>
+                        <div>
+                            <div class="font-bold text-white">Sarah M.</div>
+                            <div class="text-sm text-slate-500">Macro Analyst</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: FINAL CTA -->
+        <section class="py-32 px-6 lg:px-12 fade-in-up">
+            <div class="max-w-4xl mx-auto rounded-3xl border border-emerald-500/20 bg-emerald-900/10 p-12 text-center relative overflow-hidden">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 blur-3xl pointer-events-none"></div>
+                
+                <div class="relative z-10">
+                    <h2 class="text-4xl md:text-5xl font-black mb-6 text-white">Ready to join the elite?</h2>
+                    <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">Stop scrolling through spam. Start trading with the fastest, cleanest market chat platform ever built.</p>
+                    
+                    <a href="#" class="inline-block px-10 py-5 bg-white text-black text-lg font-bold rounded-full transition-transform hover:scale-105 shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+                        Create Free Account
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="border-t border-slate-800 py-12 px-6 lg:px-12 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6 fade-in-up">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded bg-slate-800 flex items-center justify-center font-bold text-emerald-500 text-xs">P6</div>
+                <span class="font-bold text-slate-400">&copy; 2026 Pontsix Traders. All rights reserved.</span>
+            </div>
+            <div class="flex gap-6 text-sm text-slate-500">
+                <a href="#" class="hover:text-emerald-400 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-emerald-400 transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-emerald-400 transition-colors">Contact Support</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // Simple Intersection Observer as a lightweight replacement for framer-motion in pure HTML/JS
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
